@@ -1,0 +1,321 @@
+<!--Panel-->
+<div class="card text-center" style="width: 100%; margin-top:50px">
+    <div class="card-header deep-orange lighten-1 white-text">
+        <h4>Create Appointment</h4>
+    </div>
+    <div class="card-body">
+
+              
+        <div class="row"> 
+            <div class="col-md-12">
+                <form (ngSubmit)="onSubmit(f)" #f="ngForm" >
+                <div class="row">   
+                <div class="col-md-6">
+                        <div class="form-group" style="padding-top:20px">
+                            <!-- <select-section></select-section> -->
+
+                            <ss-multiselect-dropdown 
+                            [options]="myOptions" 
+                            [(ngModel)]="optionsModel" 
+                            (ngModelChange)="onChange($event)" name="client">
+                            </ss-multiselect-dropdown>
+
+                        </div>
+                        <!-- <div class="form-group" style="padding-top:20px">
+                            <label for="description">Description</label>
+                            <input
+                                    type="text"
+                                    id="description"
+                                    class="form-control"
+                                    [ngModel]="calendar?.description"
+                                    name="description"
+                                    required>
+                                   
+                        </div> -->
+                        <div class="form-group" style="padding-top:20px">
+                            <label for="service"><h5>What?</h5></label>
+
+                                  <select class="form-control" name="service">
+                                    <option >Service 1 </option>
+                                    <option >Service 2 </option>
+                                    <option >Service 3 </option>
+                                    <option >Service 4 </option>
+                                  </select>
+                           
+                            <!-- <input
+                                    type="text"
+                                    id="venue"
+                                    class="form-control"
+                                    [ngModel]="calendar?.venue"
+                                    name="venue"
+                                    required> -->
+                        </div>  
+                        
+                        <div style="padding-top:20px;">
+                            <h5>When?</h5>
+                        <div style="border: 1px solid rgba(0,0,0,.125); padding: 10px">
+                        
+                        <div>
+                            <div class="row">
+                                 <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="date">Date</label>
+                                        <div class="input-group">
+
+                                          <input class="form-control" placeholder="yyyy-mm-dd"
+                                                 name="date" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" id="date">
+                                          <button class="input-group-addon" (click)="d.toggle()" type="button">
+                                            <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/> 
+                                          </button>
+                                        </div>
+
+
+                                        <div class="input-group">
+
+                                          <input class="form-control" placeholder="yyyy-mm-dd"
+                                                 name="date" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" id="date">
+                                          <button class="input-group-addon" (click)="d.toggle()" type="button">
+                                            <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/> 
+                                          </button>
+                                        </div>
+
+
+                                    </div>
+                               </div> 
+
+                            <div class="col-md-4">  
+                                 <div class="form-group">
+                                    <label for="starttime" class="txtstyle">Start Time</label>
+                                    <ngb-timepicker [(ngModel)]="starttime" [meridian]="meridian" id="starttime" name="starttime"></ngb-timepicker>
+                                    <!-- <button class="btn btn-sm btn-outline-{{meridian ? 'success' : 'danger'}}" (click)="toggleMeridian()">
+                                        Meridian - {{meridian ? "ON" : "OFF"}}
+                                    </button> -->
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">  
+                                <div class="form-group">
+                                    <div>
+                                        <div style="float:left; width:50px; margin-right: 10px"><label for="note" class="txtstyle">Series?</label></div>
+                                        <div style="float:left; width:50px"><ui-switch id="series" name="series"></ui-switch></div>
+                                    </div>
+                                    
+                                    <div>
+                                        
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        </div>
+                         
+
+
+
+                        <div>
+                            <div class="row">
+
+                                <div class="col-md-4">  
+                                     <div class="form-group">
+                                        <label for="preptime" class="txtstyle">Prep Time</label>
+                                        <ngb-timepicker [(ngModel)]="preptime" id="preptime" name="preptime"></ngb-timepicker>
+                                    </div>    
+                                </div>
+                                <div class="col-md-4">
+                                <div class="form-group">
+                                        <label for="duration" class="txtstyle">Duration</label>
+
+                                        <ngb-timepicker [(ngModel)]="duration" id="duration" name="duration"></ngb-timepicker>
+                                        <!-- <input
+                                                type="text"
+                                                id="duration"
+                                                class="form-control"
+                                                [ngModel]="calendar?.duration"
+                                                name="duration"
+                                                required> -->
+                                </div>
+                                </div> 
+
+
+                                <div class="col-md-4">  
+                                     <div class="form-group">
+                                        <label for="finishtime" class="txtstyle">Finish Time</label>
+                                        <ngb-timepicker [(ngModel)]="finishtime" id="finishtime" name="finishtime"></ngb-timepicker>
+                                    </div>    
+                                </div>
+                        </div>
+
+                        </div>  
+                        </div> 
+                
+                        <div class="form-group" style="padding-top:20px">
+                            <label for="venue"><h5>Where?</h5></label>
+
+                                  <select class="form-control" name="venue">
+                                    <option >Branch 1 </option>
+                                    <option >Branch 2 </option>
+                                    <option >Branch 3 </option>
+                                    <option >Branch 4 </option>
+                                  </select>
+                           
+                            <!-- <input
+                                    type="text"
+                                    id="venue"
+                                    class="form-control"
+                                    [ngModel]="calendar?.venue"
+                                    name="venue"
+                                    required> -->
+                        </div>        
+
+                </div>            
+
+                         
+
+                             
+         
+                </div>
+                <div class="col-md-6">
+                       
+                        <div class="form-group" style="padding-top:20px">
+                            <label for="provider"><h5>With?</h5></label>
+                            <!-- <input
+                                    type="text"
+                                    id="Providers"
+                                    class="form-control"
+                                    [ngModel]="calendar?.provider"
+                                    name="provider"
+                                    required> -->
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                <div style="float:left; white-space:nowrap; position: relative; margin: 0 10px 2px -2px;" class="has-error">
+
+                                    <a href="javascript:void(0)" id="prov_link_8487" data-id="8487" (click)="toggle_prov(8487)" class="prov_link ">
+                                      <div style="float:left;width:20px;height:20px;-webkit-border-radius: 5px;
+                                            -moz-border-radius: 5px;
+                                            border-radius: 5px;
+                                            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                                            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                                            box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                                            -webkit-text-shadow: 0 0 2px #006666;
+                                            -moz-text-shadow: 0 0 2px #006666;
+                                            text-shadow: 0 0 2px #006666;
+                                            color: #444;
+                                            border: solid 2px #006666;margin-right:3px;margin-bottom:5px">
+                                            <img src="img/ic_done_black_24px.svg" style="width: 1rem; height: 1rem; cursor: pointer; position: relative;" id="ico_8487"/>
+                                            <input type="checkbox" class="prov_checkbox" name="prov_checkbox[]" id="prov_8487" value="8487"><label for="prov_8487" style="width:1px;overflow:hidden;text-indent:-999em;">Darrell Blackburn</label>            
+                                        </div>
+
+                                        <span style="font-weight: normal; color: #777 !important;text-decoration: none !important;">Wilson Cat</span>        
+                                    </a>
+
+
+                                 </div>
+
+                                 <div style="float:left; white-space:nowrap; position: relative; margin: 0 10px 2px -2px;">
+
+                                    <a href="javascript:void(0)" id="prov_link_14" data-id="14" (click)="toggle_prov(14)" class="prov_link active">
+                                      <div style="float:left;width:20px;height:20px;-webkit-border-radius: 5px;
+                                        -moz-border-radius: 5px;
+                                        border-radius: 5px;
+                                        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                                        -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                                        box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                                        -webkit-text-shadow: 0 0 2px #a3446d;
+                                        -moz-text-shadow: 0 0 2px #a3446d;
+                                        text-shadow: 0 0 2px #a3446d;
+                                        color: #444;
+                                        border: solid 2px #a3446d;margin-right:3px;margin-bottom:5px">
+                                        <img src="img/ic_done_black_24px.svg" style="width: 1rem; height: 1rem; cursor: pointer; position: relative;" id="ico_14" class="unseen"/>
+                                        <input type="checkbox" class="prov_checkbox" name="prov_checkbox[]" id="prov_14" value="14" checked="checked"><label for="prov_14" style="width:1px;overflow:hidden;text-indent:-999em;">Jose Rico Geromo</label>
+                                        </div>
+
+                                    <span style="font-weight: normal; color: #444 !important;text-decoration: none !important;">Jose Rico Geromo</span>        </a>
+                                 
+                                </div>
+                          
+                             </div>
+                        </div>
+                        </div>
+
+
+                         <div class="form-group" style="padding-top:20px">
+                            <label for="Date">Notifications</label>
+                            <div>
+                                <ui-switch id="notification" name="notification"></ui-switch>
+                            </div>
+                        </div>
+                         <div class="form-group" style="padding-top:20px">
+                            <label for="preptime">Reminders</label>
+                   
+                        </div>        
+                  
+                          
+                         <div class="form-group" style="padding-top:20px">
+                            <label for="note"></label>
+
+                                <div id="toolbar">
+                                  <!-- Add a bold button -->
+                                  <button class="ql-bold">Bold</button>
+                                  <button class="ql-italic">Italic</button>
+                                  <!-- Add font size dropdown -->
+                                  <select class="ql-size">
+                                    <option value="small"></option>
+                                    <!-- Note a missing, thus falsy value, is used to reset to default -->
+                                    <option selected></option>
+                                    <option value="large"></option>
+                                    <option value="huge"></option>
+                                  </select>
+                                  <!-- Add subscript and superscript buttons -->
+                                  <button class="ql-script" value="sub"></button>
+                                  <button class="ql-script" value="super"></button>
+                                  <!-- <button style="width: 120px" (click)="customButtonClick()">custom button</button> -->
+                                </div>
+                                
+                               <quill-editor [(ngModel)]="editorContent"
+                                  [options]="editorConfig"
+                                  (blur)="onEditorBlured($event)"
+                                  (focus)="onEditorFocused($event)"
+                                  (ready)="onEditorCreated($event)"
+                                  (change)="onContentChanged($event)" name="editorContent"></quill-editor>
+
+                               <!--  <div class="ql-editor preview" [innerHTML]="editorContent" name="editorContent"></div>` -->
+
+
+
+
+                        </div>
+
+                     
+
+                </div>
+                </div>
+
+                
+              </form>
+            </div>
+        </div>
+
+
+
+
+
+        
+    </div>
+    <div class="card-footer text-muted success-color white-text">
+        <div class="row">   
+            <div class="col-md-12">
+                <div style="text-align: right;">
+                <button type="button" class="btn btn-info" (click)="onClear(f)">Clear</button>
+                <button class="btn btn-primary" type="submit">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/.Panel-->
+                        
