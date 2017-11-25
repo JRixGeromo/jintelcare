@@ -1,4 +1,16 @@
-.idea
 /node_modules
+ /.idea 
+/typings
+/public/js/auth 
+/public/js/messages 
+/public/js/app.component.js 
+/public/js/app.component.ngfactory.js 
+/public/js/app.module.js 
+/public/js/app.module.ngfactory.js 
+/public/js/app.routing.js 
+/public/js/header.component.js 
+/public/js/header.ngfactory.js 
+/public/js/main.aot.js 
+/public/js/main.js 
+/public/js/polyfils.js
 npm-debug.log
-

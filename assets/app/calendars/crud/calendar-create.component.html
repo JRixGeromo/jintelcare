@@ -8,17 +8,33 @@
               
         <div class="row"> 
             <div class="col-md-12">
-                <form (ngSubmit)="onSubmit(f)" #f="ngForm" >
+
+                <!-- <form [formGroup]="myForm">
+                    <ss-multiselect-dropdown [options]="myOptions" formControlName="optionsModel" name="client">
+                        
+                    </ss-multiselect-dropdown>
+                </form> -->
+
+
+                <form (ngSubmit)="onSubmit(f)" #f="ngForm">
                 <div class="row">   
                 <div class="col-md-6">
                         <div class="form-group" style="padding-top:20px">
+
+                            <!-- <ss-multiselect-dropdown [options]="myOptions" [(ngModel)]="optionsModel" (ngModelChange)="onChange($event)" name="myOptions"></ss-multiselect-dropdown>
+ -->
+                            <ss-multiselect-dropdown [options]="myOptions" [texts]="myTexts" [settings]="mySettings" [(ngModel)]="optionsModel" name="client"></ss-multiselect-dropdown>
+
+
+
                             <!-- <select-section></select-section> -->
 
-                            <ss-multiselect-dropdown 
+                            <!-- <ss-multiselect-dropdown 
                             [options]="myOptions" 
                             [(ngModel)]="optionsModel" 
                             (ngModelChange)="onChange($event)" name="client">
-                            </ss-multiselect-dropdown>
+                            </ss-multiselect-dropdown> -->
+
 
                         </div>
                         <!-- <div class="form-group" style="padding-top:20px">
