@@ -36,7 +36,7 @@ export class CalendarCreateComponent implements OnInit {
         enableSearch: true,
         checkedStyle: 'fontawesome',
         buttonClasses: 'btn btn-default btn-block',
-        dynamicTitleMaxItems: 3,
+        dynamicTitleMaxItems: 10,
         displayAllSelectedText: true
     };
      

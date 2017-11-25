@@ -19,11 +19,12 @@
                 <form (ngSubmit)="onSubmit(f)" #f="ngForm">
                 <div class="row">   
                 <div class="col-md-6">
-                        <div class="form-group" style="padding-top:20px">
+                    <label for="service"><h5>Whom?</h5></label>
+                        <div class="form-group" id="clientlist">
 
                             <!-- <ss-multiselect-dropdown [options]="myOptions" [(ngModel)]="optionsModel" (ngModelChange)="onChange($event)" name="myOptions"></ss-multiselect-dropdown>
  -->
-                            <ss-multiselect-dropdown [options]="myOptions" [texts]="myTexts" [settings]="mySettings" [(ngModel)]="optionsModel" name="client"></ss-multiselect-dropdown>
+                            <ss-multiselect-dropdown [options]="myOptions" [texts]="myTexts" [settings]="mySettings" [(ngModel)]="optionsModel" name="client" style="text-align: left"></ss-multiselect-dropdown>
 
 
 

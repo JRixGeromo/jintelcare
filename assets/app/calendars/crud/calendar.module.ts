@@ -12,6 +12,7 @@ import { CalendarService } from "./calendar.service";
 //import { TinymceModule } from 'angular2-tinymce';
 import { QuillEditorModule } from 'ngx-quill-editor';
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
         UiSwitchModule,
         ReactiveFormsModule,
         NgbModule,
-        QuillEditorModule
+        QuillEditorModule,
+        AngularFontAwesomeModule
 
         //TinymceModule
     ],
