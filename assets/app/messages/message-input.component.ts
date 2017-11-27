@@ -49,6 +49,30 @@ export class MessageInputComponent implements OnInit {
                     // error => console.error(error)
                 );
         }
+        
+
+
+        this.messageService.getMessages()
+            .subscribe(
+                (messages: Message[]) => {
+                    this.messages = messages;
+                    
+                    var stringArr = []; 
+                    messages.forEach(element => {
+                    let client = {
+                                id : element.messageId, 
+                                name : element.content, 
+                                }
+                    
+                    stringArr.push(client);                  
+                    });
+
+                    this.myOptions = stringArr;
+
+                    
+
+                }
+            );
         form.resetForm();
     }
 
