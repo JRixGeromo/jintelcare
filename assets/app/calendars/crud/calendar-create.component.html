@@ -24,7 +24,11 @@
 
                             <!-- <ss-multiselect-dropdown [options]="myOptions" [(ngModel)]="optionsModel" (ngModelChange)="onChange($event)" name="myOptions"></ss-multiselect-dropdown>
  -->
-                            <ss-multiselect-dropdown [options]="myOptions" [texts]="myTexts" [settings]="mySettings" [(ngModel)]="optionsModel" name="client" style="text-align: left"></ss-multiselect-dropdown>
+                            <!-- <ss-multiselect-dropdown [options]="myOptions" [texts]="myTexts" [settings]="mySettings" [(ngModel)]="optionsModel" name="client" style="text-align: left"></ss-multiselect-dropdown> -->
+
+
+                            <ss-multiselect-dropdown [options]="myOptions" [(ngModel)]="optionsModel" (ngModelChange)="onChange($event)" [settings]="mySettings" name="client" style="text-align: left"></ss-multiselect-dropdown>
+
 
 
 

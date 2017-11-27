@@ -11,9 +11,9 @@ var mainRoutes = require('./routes/mainroutes');
 var userRoutes = require('./routes/user');
 
 var app = express();
-//mongoose.connect('localhost:27017/jintelcare');
+mongoose.connect('localhost:27017/jintelcare');
 //mongodb://<dbuser>:<dbpassword>@ds259105.mlab.com:59105/jintelcare
-mongoose.connect('mongodb://jrix:jrix123@ds259105.mlab.com:59105/jintelcare');
+//mongoose.connect('mongodb://jrix:jrix123@ds259105.mlab.com:59105/jintelcare');
 
 
 // view engine setup

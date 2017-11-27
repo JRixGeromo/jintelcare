@@ -29,42 +29,29 @@ export class CalendarCreateComponent implements OnInit {
 
      
     // Default selection 
-    optionsModel: number[] = [1, 2];
      
-    // Settings configuration 
+
+    // model: number[];
+    // myOptions: IMultiSelectOption[] = [
+    //     { id: 1, name: 'Option 1' },
+    //     { id: 2, name: 'Option 2' },
+    //     { id: 3, name: 'Option 3' },
+    //     { id: 4, name: 'Option 4' },
+    //     { id: 5, name: 'Option 5' },
+    //     { id: 6, name: 'Option 6' },
+    //     { id: 7, name: 'Option 7' },
+
+    // ];
+
     mySettings: IMultiSelectSettings = {
         enableSearch: true,
         checkedStyle: 'fontawesome',
         buttonClasses: 'btn btn-default btn-block',
-        dynamicTitleMaxItems: 10,
+        dynamicTitleMaxItems: 15,
         displayAllSelectedText: true
     };
-     
-    // Text configuration 
-    myTexts: IMultiSelectTexts = {
-        checkAll: 'Select all',
-        uncheckAll: 'Unselect all',
-        checked: 'item selected',
-        checkedPlural: 'items selected',
-        searchPlaceholder: 'Find',
-        defaultTitle: 'Select',
-        allSelected: 'All selected',
-    };
-     
-    // Labels / Parents 
-    myOptions: IMultiSelectOption[] = [
-        { id: 1, name: 'Car brands', isLabel: true },
-        { id: 2, name: 'Volvo', parentId: 1 },
-        { id: 3, name: 'Honda', parentId: 1 },
-        { id: 4, name: 'BMW', parentId: 1 },
-        { id: 5, name: 'Colors', isLabel: true },
-        { id: 6, name: 'Blue', parentId: 5 },
-        { id: 7, name: 'Red', parentId: 5 },
-        { id: 8, name: 'White', parentId: 5 }
-    ];
 
 
-    /////
     //myOptions: IMultiSelectOption[];
     starttime = {hour: 8, minute: 0};
     meridian = true;
@@ -119,10 +106,23 @@ export class CalendarCreateComponent implements OnInit {
         this.calendarService.calendarIsEdit.subscribe(
             (calendar: Calendar) => this.calendar = calendar
         );
+         
 
+        this.myOptions = [
+        { id: 1, name: 'Option 1' },
+        { id: 2, name: 'Option 2' },
+        { id: 3, name: 'Option 3' },
+        { id: 4, name: 'Option 4' },
+        { id: 5, name: 'Option 5' },
+        { id: 6, name: 'Option 6' },
+        { id: 7, name: 'Option 7' },
+        ];
 
     }
      
+
+
+
     onEditorBlured(quill) {
         console.log('editor blur!', quill);
     }

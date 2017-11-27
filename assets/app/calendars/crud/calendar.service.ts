@@ -20,8 +20,8 @@ export class CalendarService {
         const token = localStorage.getItem('token')
             ? '?token=' + localStorage.getItem('token')
             : '';
-        return this.http.post('https://jintelcare.herokuapp.com/calendar/add-schedule/' + token, body, {headers: headers})
-        //return this.http.post('http://localhost:3000/calendar/create-schedule/' + token, body, {headers: headers})
+        //return this.http.post('https://jintelcare.herokuapp.com/calendar/add-schedule/' + token, body, {headers: headers})
+        return this.http.post('http://localhost:3000/calendar/create-schedule/' + token, body, {headers: headers})
               .map((response: Response) => {
                 const result = response.json();
                 const calendar = new Calendar(
@@ -39,8 +39,8 @@ export class CalendarService {
     }
 
     getCalendars() {
-        return this.http.get('https://jintelcare.herokuapp.com/calendar/list-schedules')
-        //return this.http.get('http://localhost:3000/calendar/list-schedules')
+        //return this.http.get('https://jintelcare.herokuapp.com/calendar/list-schedules')
+        return this.http.get('http://localhost:3000/calendar/list-schedules')
         
             .map((response: Response) => {
                 const calendars = response.json().obj;
@@ -72,8 +72,8 @@ export class CalendarService {
         const token = localStorage.getItem('token')
             ? '?token=' + localStorage.getItem('token')
             : '';
-        return this.http.patch('https://jintelcare.herokuapp.com/calendar/update-schedule/' + calendar.calendarId + token, body, {headers: headers})
-        //return this.http.patch('http://localhost:3000/calendar/update-schedule/' + calendar.calendarId + token, body, {headers: headers})
+        //return this.http.patch('https://jintelcare.herokuapp.com/calendar/update-schedule/' + calendar.calendarId + token, body, {headers: headers})
+        return this.http.patch('http://localhost:3000/calendar/update-schedule/' + calendar.calendarId + token, body, {headers: headers})
             .map((response: Response) => response.json())
             .catch((error: Response) => {
                 this.errorService.handleError(error.json());
@@ -86,8 +86,8 @@ export class CalendarService {
         const token = localStorage.getItem('token')
             ? '?token=' + localStorage.getItem('token')
             : '';
-        return this.http.delete('https://jintelcare.herokuapp.com/calendar/delete-schedule/' + calendar.calendarId + token)
-        //return this.http.delete('http://localhost:3000/calendar/delete-schedule/' + calendar.calendarId + token)
+        //return this.http.delete('https://jintelcare.herokuapp.com/calendar/delete-schedule/' + calendar.calendarId + token)
+        return this.http.delete('http://localhost:3000/calendar/delete-schedule/' + calendar.calendarId + token)
             .map((response: Response) => response.json())
             .catch((error: Response) => {
                 this.errorService.handleError(error.json());
