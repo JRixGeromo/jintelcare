@@ -12,6 +12,7 @@ import { IMultiSelectOption, IMultiSelectSettings, IMultiSelectTexts  } from 'an
 })
 export class MessageInputComponent implements OnInit {
     message: Message;
+    messages: Message[];
 
 
     mySettings: IMultiSelectSettings = {
@@ -66,15 +67,40 @@ export class MessageInputComponent implements OnInit {
         );
 
 
-        this.myOptions = [
-        { id: 1, name: 'Option 1' },
-        { id: 2, name: 'Option 2' },
-        { id: 3, name: 'Option 3' },
-        { id: 4, name: 'Option 4' },
-        { id: 5, name: 'Option 5' },
-        { id: 6, name: 'Option 6' },
-        { id: 7, name: 'Option 7' },
-        ];
+        this.messageService.getMessages()
+            .subscribe(
+                (messages: Message[]) => {
+                    this.messages = messages;
+                    
+                    var stringArr = []; 
+                    messages.forEach(element => {
+                    let client = {
+                                id : element.messageId, 
+                                name : element.content, 
+                                }
+                    
+                    stringArr.push(client);                  
+                    });
+
+                    this.myOptions = stringArr;
+
+                    
+
+                }
+            );
+
+        
+
+
+        // this.myOptions = [
+        // { id: 1, name: 'Option 1' },
+        // { id: 2, name: 'Option 2' },
+        // { id: 3, name: 'Option 3' },
+        // { id: 4, name: 'Option 4' },
+        // { id: 5, name: 'Option 5' },
+        // { id: 6, name: 'Option 6' },
+        // { id: 7, name: 'Option 7' },
+        // ];
 
     }
 }
