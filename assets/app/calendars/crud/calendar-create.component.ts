@@ -51,8 +51,10 @@ export class CalendarCreateComponent implements OnInit {
         displayAllSelectedText: true
     };
 
+    // Default selection 
+    optionsModel: number[] = [1, 2];
+    myOptions: IMultiSelectOption[];
 
-    //myOptions: IMultiSelectOption[];
     starttime = {hour: 8, minute: 0};
     meridian = true;
   
