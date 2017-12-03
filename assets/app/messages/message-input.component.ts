@@ -11,6 +11,7 @@ import { IMultiSelectOption, IMultiSelectSettings, IMultiSelectTexts  } from 'an
     templateUrl: './message-input.component.html'
 })
 export class MessageInputComponent implements OnInit {
+
     message: Message;
     messages: Message[];
 

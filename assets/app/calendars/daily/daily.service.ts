@@ -15,8 +15,8 @@ export class DailyService {
     }
 
     getDaily() {
-        //return this.http.get('https://jintelcare.herokuapp.com/calendar/list-schedules')
-        return this.http.get('http://localhost:3000/calendar/daily-schedules')
+        return this.http.get('https://jintelcare.herokuapp.com/calendar/list-schedules')
+        //return this.http.get('http://localhost:3000/calendar/daily-schedules')
         
             .map((response: Response) => {
                 const calendars = response.json().obj;
