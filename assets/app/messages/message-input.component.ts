@@ -74,6 +74,7 @@ export class MessageInputComponent implements OnInit {
 
                 }
             );
+            
         form.resetForm();
     }
 

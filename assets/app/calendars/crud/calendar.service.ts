@@ -20,7 +20,7 @@ export class CalendarService {
         const token = localStorage.getItem('token')
             ? '?token=' + localStorage.getItem('token')
             : '';
-        return this.http.post('https://jintelcare.herokuapp.com/calendar/add-schedule/' + token, body, {headers: headers})
+        return this.http.post('https://jintelcare.herokuapp.com/calendar/create-schedule/' + token, body, {headers: headers})
         //return this.http.post('http://localhost:3000/calendar/create-schedule/' + token, body, {headers: headers})
               .map((response: Response) => {
                 const result = response.json();
