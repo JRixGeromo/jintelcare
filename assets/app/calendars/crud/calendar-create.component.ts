@@ -19,7 +19,11 @@ declare var $:any;
 export class CalendarCreateComponent implements OnInit {
 
     calendar: Calendar;
-    model;
+    
+    start_date = {year: 2017, month: 8, day: 8};
+    
+    series_date = {year: 2017, month: 12, day: 8};
+
     duration = {hour: 1, minute: 0};
     preptime = {hour: 0, minute: 0};
     finishtime = {hour: 0, minute: 0};

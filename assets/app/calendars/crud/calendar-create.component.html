@@ -86,13 +86,44 @@
                         
                         <div>
                             <div class="row">
+
+
+                                 <div class="col-md-4">  
+                                    <div class="form-group">
+
+                                        <div style="width: 100%">
+                                            <div style="float:left; width:50px; margin-right: 10px">
+                                                <label for="note" class="txtstyle">Series?</label>
+                                            </div>
+                                            <div style="float:left; width:50px"><ui-switch id="series" name="series"></ui-switch></div>
+                                        </div>
+                                        
+                                        <div style="display: inline-block;width: 100%">
+                                          <div>
+                                             <span>Every</span> 
+                                          </div>  
+                                          <div style="display: inline-block;">
+                                              <div style="float: left; width: auto; padding: 1px">  
+                                                   <input type="text" name="interval" id="interval" class="form-control" style="width:50px;" value="1">
+                                              </div>
+                                              <div style="float: left; width: auto;"> 
+                                                  <select class="form-control" name="unit">
+                                                    <option >day(s) </option>
+                                                    <option >week(s) </option>
+                                                  </select>
+                                              </div>
+                                          </div>  
+                                        </div>
+                                    </div>
+                                </div>
+
                                  <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="date">Date</label>
+                                        <label for="start_date">Date</label>
                                         <div class="input-group">
 
                                           <input class="form-control" placeholder="yyyy-mm-dd"
-                                                 name="date" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" id="date">
+                                                 name="start_date" [(ngModel)]="start_date" ngbDatepicker #d="ngbDatepicker" id="start_date">
                                           <button class="input-group-addon" (click)="d.toggle()" type="button">
                                             <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/> 
                                           </button>
@@ -102,7 +133,7 @@
                                         <div class="input-group">
 
                                           <input class="form-control" placeholder="yyyy-mm-dd"
-                                                 name="date" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" id="date">
+                                                 name="series_date" [(ngModel)]="series_date" ngbDatepicker #d="ngbDatepicker" id="series_date">
                                           <button class="input-group-addon" (click)="d.toggle()" type="button">
                                             <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/> 
                                           </button>
@@ -122,19 +153,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-4">  
-                                <div class="form-group">
-                                    <div>
-                                        <div style="float:left; width:50px; margin-right: 10px"><label for="note" class="txtstyle">Series?</label></div>
-                                        <div style="float:left; width:50px"><ui-switch id="series" name="series"></ui-switch></div>
-                                    </div>
-                                    
-                                    <div>
-                                        
-
-                                    </div>
-                                </div>
-                            </div>
+     
 
                         </div>
 
